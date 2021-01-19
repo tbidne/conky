@@ -10,7 +10,11 @@ in stdenv.mkDerivation {
   buildInputs = [ pkgs.conky ];
 
   installPhase = ''
-    conky -c $src/conky_left.conf
-    conky -c $src/conky_right.conf
+    cp $src/conky_left.conf $out
+    cp $src/conky_right.conf $out
+    cp $src/conky.lua $out
+
+    conky -c $out/conky_left.conf
+    conky -c $out/conky_right.conf
   '';
 }
