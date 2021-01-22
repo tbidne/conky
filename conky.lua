@@ -1,10 +1,10 @@
 require 'cairo'
 
 white = '${color white}'
-green = '${color green}'
-yellow = '${color yellow}'
+green = '${color #4EB562}'
+yellow = '${color #D4AC0D}'
 orange = '${color #D35400}'
-red = '${color red}'
+red = '${color #B03A2E}'
 
 function conky_lpad(n, s)
     format = '%' .. n .. 's'
@@ -36,7 +36,7 @@ function conky_color_battery(s)
   elseif percent > 20 then
     color = orange
   else
-    color =red
+    color = red
   end
   return color .. cmd
 end
@@ -86,13 +86,13 @@ function conky_color_ram(s)
   percent = tonumber(percent_str)
 
   if percent > 14 then
-    color = '${color red}'
+    color = red
   elseif percent > 10 then
-    color = '${color orange}'
+    color = orange
   elseif percent > 8 then
-    color = '${color yellow}'
+    color = yellow
   else
-    color = '${color green}'
+    color = green
   end
   return color .. cmd
 end
