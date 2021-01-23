@@ -82,7 +82,7 @@ end
 function conky_color_ram(s)
   cmd = '${membar 20}'
 
-  percent_str = string.match(conky_parse(s), '[0-9]+')
+  percent_str = string.match(conky_parse(s), '[0-9.]+')
   percent = tonumber(percent_str)
 
   if percent > 14 then
