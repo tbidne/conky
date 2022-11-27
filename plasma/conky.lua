@@ -17,7 +17,7 @@ function conky_rpad(n, s)
 end
 
 function conky_color_battery(s)
-  cmd = '${battery_bar 20}'
+  cmd = '${battery_bar 10}'
 
   status = conky_parse(s)
   discharging = string.match(status, 'discharging')
@@ -43,7 +43,7 @@ end
 
 function conky_color_cpu(n)
   numCmd = '${cpu cpu' .. n .. '}'
-  barCmd = '${cpubar cpu' .. n .. ' 20}'
+  barCmd = '${cpubar cpu' .. n .. ' 10}'
 
   percent_str = string.match(conky_parse(numCmd), '[0-9]+')
   percent = tonumber(percent_str)
@@ -62,7 +62,7 @@ end
 
 function conky_color_cpu_total(n)
   numCmd = '${cpu cpu0}'
-  barCmd = '${cpubar cpu0 20}'
+  barCmd = '${cpubar cpu0 10}'
 
   percent_str = string.match(conky_parse(numCmd), '[0-9]+')
   percent = tonumber(percent_str)
@@ -80,7 +80,7 @@ function conky_color_cpu_total(n)
 end
 
 function conky_color_ram(s)
-  cmd = '${membar 20}'
+  cmd = '${membar 10}'
 
   percent_str = string.match(conky_parse(s), '[0-9.]+')
   percent = tonumber(percent_str)
@@ -98,7 +98,7 @@ function conky_color_ram(s)
 end
 
 function conky_color_swap(s)
-  cmd = '${swapbar 20}'
+  cmd = '${swapbar 10}'
 
   status = conky_parse(s)
 
