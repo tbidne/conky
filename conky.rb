@@ -14,7 +14,7 @@ def tc(header, dest)
   time = c[1]
   tz = '%-4.4s' % c[2]
 
-  "#{header_padded} #{day} #{time} #{tz} "
+  "#{header_padded} #{day} #{time} #{tz}"
 end
 
 header = ARGV[0]
