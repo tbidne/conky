@@ -5,7 +5,7 @@ RX = /^([a-zA-Z]{3}) ([0-9]{2}:[0-9]{2}) ([a-zA-Z]+)$/
 def tc(header, dest)
   header_padded = '%-4.4s' % "#{header}:"
 
-  cmd = "time-conv -o '%a %H:%M %Z' -d #{dest}"
+  cmd = "kairos -o '%a %H:%M %Z' -d #{dest}"
   result = `#{cmd}`
 
   c = result.match(RX).captures
